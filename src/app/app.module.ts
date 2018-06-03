@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AzulComponent } from './azul/azul.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AzulComponent
   ],
   imports: [
     BrowserModule
