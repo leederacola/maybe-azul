@@ -15,6 +15,9 @@ export class AzulTile {
     setHasTile(){
         this.hasTile = true;
     }
+    setRemoveTile(){
+        this.hasTile = false;
+    }
     setHasLeft(){
         this.hasLeft = true;
     }

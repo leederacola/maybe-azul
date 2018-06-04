@@ -29,8 +29,8 @@
   }
   .yellow.set{
     background-image:
-    radial-gradient(yellow 9px, transparent 10px),        
-    repeating-radial-gradient(yellow 0, yellow 4px, transparent 5px, transparent 20px, yellow 21px, yellow 25px, transparent 26px, transparent 50px);    
+    radial-gradient(orange 9px, transparent 10px),        
+    repeating-radial-gradient(orange 0, orange 4px, transparent 5px, transparent 20px, orange 21px, orange 25px, transparent 26px, transparent 50px);    
     background-size: 30px 30px, 90px 90px; 
     background-position: 0 0 
   }

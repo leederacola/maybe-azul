@@ -19,13 +19,35 @@ export class AzulGame {
     }
 
 
-    // set tile
+    //set tile
+    //tile number = class location on grid
     // setTile(tileNumber: number){
     //     this.TileBoard[tileNumber].setHasTile();
-    //     let board = this.TileBoard;
-
-    //     if(board[tileNumber-1])
+    //     let s = tileNumber.toString();
+    //     let tile = document.getElementsByClassName(s);
+    //     tile[0].classList.add("set");
     // }
+    // removeTile(tileNumber: number){
+    //     this.TileBoard[tileNumber].setRemoveTile();
+    //     let s = tileNumber.toString();
+    //     let tile = document.getElementsByClassName(s);
+    //     tile[0].classList.remove("set");
+    // }
+    toggleTileSet(n: number){
+        let s = n.toString();
+        let tile = document.getElementsByClassName(s);
+        if(tile[n].classList.contains("set")){
+            tile[0].classList.remove("set");
+            this.TileBoard[n].hasTile = false;
+        }
+        else{
+            tile[0].classList.add("set");
+            this.TileBoard[n].hasTile = true;         
+        }
+
+    }
+
+
     checkTile(tileNumber: number){
         let tile = this.TileBoard[tileNumber];
         return (tile.hasTile);
