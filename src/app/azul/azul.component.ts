@@ -26,45 +26,119 @@ export class AzulComponent implements OnInit {
   }
 
 
-  toggleTileSet(n: number){
+  toggleTileSet(n: number) {
     let s = n.toString();
     let tile = document.getElementsByClassName(s);
-    if(tile[0].classList.contains("set")){
-        tile[0].classList.remove("set");
-        this.board[n].hasTile = false;
+    if (tile[0].classList.contains("set")) {
+      tile[0].classList.remove("set");
+      this.board[n].hasTile = false;
     }
-    else{
-        tile[0].classList.add("set");
-        this.board[n].hasTile = true;         
+    else {
+      tile[0].classList.add("set");
+      this.board[n].hasTile = true;
     }
     this.currentTile = n;
     console.log(this.board[n].hasTile);
-}
-  scoreTile(){
-    let tileNumber = this.currentTile;
-    let board = this.board;
-    
-    if(board[tileNumber - 1].hasTile){
-      this.score++;
-    }
-    if(board[tileNumber + 1].hasTile){
-      this.score++;
-    }
-    if(board[tileNumber + 5].hasTile){
-      this.score++;
-    }
-    if(board[tileNumber - 5].hasTile){
-      this.score++;
-    }
-
-
   }
 
 
-  constructor() { }
+  scoreTile() {
+    let tileNumber = this.currentTile;
+    let board = this.board;
+    let moveL = (tileNumber % 5);
+    let moveR = (4 - (tileNumber % 5));
+    let moveU = (tileNumber % 5);
+    let moveD = (tileNumber % 5);
+    let newScore = 0;
 
-  ngOnInit() {
+  //   // start left traversail
+  //   if (tileNumber > 0) {     
+  //     for (let i = 0; i < moveL; i++) {
+  //       console.log("loop left # " + i);        
+  //       // move left
+  //       {
+  //         if (this.board[tileNumber - i].hasTile) {
+  //           newScore++;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   else{
+  //     console.log("newScore ++ left loop");
+  //     newScore++; // tile is 0
+  //   }// end left traversial
+    
+
+    
+  // if(tileNumber < 24){
+  //   for (let i = 0; i < moveR; i++) {
+  //     console.log("loop right # " + i);       
+  //     // move right
+  //     {
+  //       if (this.board[tileNumber + i].hasTile) {
+  //         newScore++;
+  //         console.log("newScore ++  inside right loop");
+  //       }
+  //     }
+  //   }
+  // }
+  // else{
+  //   newScore++; // tile is 24
+  //   console.log("newScore ++ right loop");
+  // }// end left traversial
+
+
+
+    // above checks
+    if (tileNumber >= 5) {     
+      for (let i = 0; i < moveU; i++) {
+        console.log("loop above # " + i);        
+        // move left
+        {
+          if (this.board[tileNumber - (i*5)].hasTile) {
+            newScore++;
+          }
+        }
+      }
+    }
+    else{
+      console.log("newScore ++ above loop");
+      newScore++; // tile is 0
+    }// end above
+
+
+    if (tileNumber <= 19 ) {     
+      for (let i = 0; i < moveD; i++) {
+        console.log("loop above # " + i);        
+        // move left
+        {
+          if (this.board[tileNumber + (i*5)].hasTile) {
+            newScore++;
+          }
+        }
+      }
+    }
+    else{
+      console.log("newScore ++ above loop");
+      newScore++; // tile is 0
+    }// end above
+  
+    console.log("score to be added: " + newScore);
+    this.score += newScore;
+  } // end score func
+
+
+ 
+
+
+
+  constructor() { 
     this.startNewGame();
+    
+  }
+
+  ngOnInit() { 
+    
   }
 
 }

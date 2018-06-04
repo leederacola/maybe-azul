@@ -3,7 +3,7 @@ import { Color } from '../classes/color.enum';
 export class AzulTile {
     // tile color not needed for simple score keeper, will be need for complete game logic
     // tileColor: Color;
-    hasTile: boolean;
+    hasTile: boolean = false;
     hasLeft: boolean;
     hasRight: boolean;
     hasAbove: boolean;
