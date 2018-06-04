@@ -3,15 +3,13 @@ import { Color } from '../classes/color.enum';
 export class AzulTile {
     // tile color not needed for simple score keeper, will be need for complete game logic
     // tileColor: Color;
-    position: number;
     hasTile: boolean;
     hasLeft: boolean;
     hasRight: boolean;
     hasAbove: boolean;
     hasBelow: boolean;
 
-    constructor(pos: number){
-        this.position = pos
+    constructor(){        
     }
 
     setHasTile(){

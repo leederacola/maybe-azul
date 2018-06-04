@@ -2,33 +2,81 @@ import { AzulTile } from '../classes/azul-tile';
 
 export class AzulGame {
 
-    TileBoard:AzulTile[];
+    TileBoard:AzulTile[] = new Array(24);
     Score: number = 0;
 
 
     constructor(){
+        this.fillBoardTiles();
     }
 
     // make arrsy of 25 tiles
     fillBoardTiles(){
         for(let i = 0; i < 25; i++)
         {
-            this.TileBoard[i]= new AzulTile(i);
+            this.TileBoard[i]= new AzulTile();
         }
     }
 
 
     // set tile
-    setTile(tileNumber: number)
-    {
-        this.TileBoard[tileNumber].setHasTile();
+    // setTile(tileNumber: number){
+    //     this.TileBoard[tileNumber].setHasTile();
+    //     let board = this.TileBoard;
+
+    //     if(board[tileNumber-1])
+    // }
+    checkTile(tileNumber: number){
+        let tile = this.TileBoard[tileNumber];
+        return (tile.hasTile);
     }
 
-    checkLeft(){
-        // tile properity is border right/left 
-        // ex tile #4 top right aint need to plus 1 for has rught check
+    // combine the checkFunctions?
+
+    checkLeft(tileNumber: number){
+        let board = this.TileBoard; // start at newly places tile
+        let tile = this.TileBoard[tileNumber];
+        //loop
+        while(tile.hasTile)
+        {
+            tile = board[tileNumber-1]; // move left   
+            this.Score ++;// add to score
+        } 
     }
 
+    checkRight(tileNumber: number){
+        let board = this.TileBoard; // start at newly places tile
+        let tile = this.TileBoard[tileNumber];
+        //loop
+        while(tile.hasTile)
+        {
+            tile = board[tileNumber+1]; // move left   
+            this.Score ++;// add to score
+        } 
+    }
+
+    checkAbove(tileNumber: number){
+        let board = this.TileBoard; // start at newly places tile
+        let tile = this.TileBoard[tileNumber];
+        //loop
+        while(tile.hasTile)
+        {
+            tile = board[tileNumber-5]; // move left   
+            this.Score ++;// add to score
+        } 
+    }
+
+    checkBelow(tileNumber: number){
+        let board = this.TileBoard; // start at newly places tile
+        let tile = this.TileBoard[tileNumber];
+        //loop
+        while(tile.hasTile)
+        {
+            tile = board[tileNumber+10]; // move left   
+            this.Score ++;// add to score
+        } 
+    }
+    // combine the checkFunctions?
 
 
 }

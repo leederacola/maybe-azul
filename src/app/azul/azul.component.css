@@ -1,0 +1,66 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    background-color: rgb(194, 196, 197);
+    padding: 10px;
+  }
+
+
+  .grid-container > div {
+    
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  .blue{
+    background-color: rgb(105, 105, 236);
+  }
+  .blue.set{
+    background-image:
+    radial-gradient(blue 9px, transparent 10px),        
+    repeating-radial-gradient(blue 0, blue 4px, transparent 5px, transparent 20px, blue 21px, blue 25px, transparent 26px, transparent 50px);    
+    background-size: 30px 30px, 90px 90px; 
+    background-position: 0 0 
+  }
+  .yellow{
+    background-color: rgb(253, 253, 168);
+  }
+  .yellow.set{
+    background-image:
+    radial-gradient(yellow 9px, transparent 10px),        
+    repeating-radial-gradient(yellow 0, yellow 4px, transparent 5px, transparent 20px, yellow 21px, yellow 25px, transparent 26px, transparent 50px);    
+    background-size: 30px 30px, 90px 90px; 
+    background-position: 0 0 
+  }
+  .red{
+    background-color: rgb(255, 172, 172);
+  }
+  .red.set{
+    background-image:
+    radial-gradient(red 9px, transparent 10px),        
+    repeating-radial-gradient(red 0, red 4px, transparent 5px, transparent 20px, red 21px, red 25px, transparent 26px, transparent 50px);    
+    background-size: 30px 30px, 90px 90px; 
+    background-position: 0 0 
+  }
+  .black{
+    background-color: rgb(128, 128, 128);
+  }
+  .black.set{
+    background-image:
+    radial-gradient(black 9px, transparent 10px),        
+    repeating-radial-gradient(black 0, black 4px, transparent 5px, transparent 20px, black 21px, black 25px, transparent 26px, transparent 50px);    
+    background-size: 30px 30px, 90px 90px; 
+    background-position: 0 0 
+  }
+  .white{
+    background-color:white;
+  }
+  .white.set{
+    background-image:
+    radial-gradient(Aqua 9px, transparent 10px),        
+    repeating-radial-gradient(Aqua 0, Aqua 4px, transparent 5px, transparent 20px, Aqua 21px, Aqua 25px, transparent 26px, transparent 50px);    
+    background-size: 30px 30px, 90px 90px; 
+    background-position: 0 0 
+  }
