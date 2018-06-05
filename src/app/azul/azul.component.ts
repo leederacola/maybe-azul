@@ -46,74 +46,75 @@ export class AzulComponent implements OnInit {
     let tileNumber = this.currentTile;
     let board = this.board;
     let moveL = (tileNumber % 5);
-    let moveR = (4 - (tileNumber % 5));
-    let moveU = (tileNumber % 5);
-    let moveD = (tileNumber % 5);
+    let moveR = (5 - (tileNumber % 5));
+    let moveU = (tileNumber / 5);
+    let moveB = ((25 - tileNumber) / 5);
     let newScore = 0;
 
-  //   // start left traversail
-  //   if (tileNumber > 0) {     
-  //     for (let i = 0; i < moveL; i++) {
-  //       console.log("loop left # " + i);        
-  //       // move left
-  //       {
-  //         if (this.board[tileNumber - i].hasTile) {
-  //           newScore++;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   else{
-  //     console.log("newScore ++ left loop");
-  //     newScore++; // tile is 0
-  //   }// end left traversial
+    // start left traversail
+       console.log("start left traversial...............................");
+    if (tileNumber > 0) {     
+      for (let i = 0; i < moveL; i++) {
+        console.log("loop left # " + i);        
+        // move left
+        {
+          if (this.board[tileNumber - i].hasTile) {
+                console.log(" left newScore ++");
+            newScore++;
+          }
+        }
+      }
+    }
+    else{
+      newScore++; // tile is 0
+    }// end left traversial
     
 
-    
-  // if(tileNumber < 24){
-  //   for (let i = 0; i < moveR; i++) {
-  //     console.log("loop right # " + i);       
-  //     // move right
-  //     {
-  //       if (this.board[tileNumber + i].hasTile) {
-  //         newScore++;
-  //         console.log("newScore ++  inside right loop");
-  //       }
-  //     }
-  //   }
-  // }
-  // else{
-  //   newScore++; // tile is 24
-  //   console.log("newScore ++ right loop");
-  // }// end left traversial
+  console.log("start right traversial...............................");
+  if(tileNumber < 24){
+    for (let i = 0; i < moveR; i++) {
+      console.log("loop right # " + i);       
+      // move right
+      {
+        if (this.board[tileNumber + i].hasTile) {
+          newScore++;
+          console.log("right newScore + ");
+        }
+      }
+    }
+  }
+  else{
+    newScore++; // tile is 24
+  }// end left traversial
 
 
 
-    // above checks
-    if (tileNumber >= 5) {     
+    console.log("start above traversial...............................");
+    if (tileNumber > 4) {     
       for (let i = 0; i < moveU; i++) {
         console.log("loop above # " + i);        
         // move left
         {
           if (this.board[tileNumber - (i*5)].hasTile) {
             newScore++;
+            console.log("above newScore ++");
           }
         }
       }
     }
     else{
-      console.log("newScore ++ above loop");
       newScore++; // tile is 0
     }// end above
 
-
-    if (tileNumber <= 19 ) {     
-      for (let i = 0; i < moveD; i++) {
-        console.log("loop above # " + i);        
+    // console.log("start below traversial...............................");
+    if (tileNumber < 20 ) {     
+      for (let i = 0; i < moveB; i++) {
+        console.log("loop below # " + i);        
         // move left
         {
           if (this.board[tileNumber + (i*5)].hasTile) {
             newScore++;
+            console.log("below newScore ++");
           }
         }
       }
@@ -121,7 +122,7 @@ export class AzulComponent implements OnInit {
     else{
       console.log("newScore ++ above loop");
       newScore++; // tile is 0
-    }// end above
+    }// end below
   
     console.log("score to be added: " + newScore);
     this.score += newScore;
