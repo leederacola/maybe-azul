@@ -70,63 +70,75 @@ export class AzulComponent implements OnInit {
     }// end left traversial
     
 
-  console.log("start right traversial...............................");
-  if(tileNumber < 24){
-    for (let i = 0; i < moveR; i++) {
-      console.log("loop right # " + i);       
-      // move right
-      {
-        if (this.board[tileNumber + i].hasTile) {
-          newScore++;
-          console.log("right newScore + ");
-        }
-      }
-    }
-  }
-  else{
-    newScore++; // tile is 24
-  }// end left traversial
+  // console.log("start right traversial...............................");
+  // if(tileNumber < 24){
+  //   for (let i = 0; i < moveR; i++) {
+  //     console.log("loop right # " + i);       
+  //     // move right
+  //     {
+  //       if (this.board[tileNumber + i].hasTile) {
+  //         newScore++;
+  //         console.log("right newScore + ");
+  //       }
+  //     }
+  //   }
+  // }
+  // else{
+  //   newScore++; // tile is 24
+  // }// end left traversial
 
 
 
-    console.log("start above traversial...............................");
-    if (tileNumber > 4) {     
-      for (let i = 0; i < moveU; i++) {
-        console.log("loop above # " + i);        
-        // move left
-        {
-          if (this.board[tileNumber - (i*5)].hasTile) {
-            newScore++;
-            console.log("above newScore ++");
-          }
-        }
-      }
-    }
-    else{
-      newScore++; // tile is 0
-    }// end above
+  //   console.log("start above traversial...............................");
+  //   if (tileNumber > 4) {     
+  //     for (let i = 0; i < moveU; i++) {
+  //       console.log("loop above # " + i);        
+  //       // move left
+  //       {
+  //         if (this.board[tileNumber - (i*5)].hasTile) {
+  //           newScore++;
+  //           console.log("above newScore ++");
+  //         }
+  //       }
+  //     }
+  //   }
+  //   else{
+  //     newScore++; // tile is 0
+  //   }// end above
 
-    // console.log("start below traversial...............................");
-    if (tileNumber < 20 ) {     
-      for (let i = 0; i < moveB; i++) {
-        console.log("loop below # " + i);        
-        // move left
-        {
-          if (this.board[tileNumber + (i*5)].hasTile) {
-            newScore++;
-            console.log("below newScore ++");
-          }
-        }
-      }
-    }
-    else{
-      console.log("newScore ++ above loop");
-      newScore++; // tile is 0
-    }// end below
+  //   // console.log("start below traversial...............................");
+  //   if (tileNumber < 20 ) {     
+  //     for (let i = 0; i < moveB; i++) {
+  //       console.log("loop below # " + i);        
+  //       // move left
+  //       {
+  //         if (this.board[tileNumber + (i*5)].hasTile) {
+  //           newScore++;
+  //           console.log("below newScore ++");
+  //         }
+  //       }
+  //     }
+  //   }
+  //   else{
+  //     console.log("newScore ++ above loop");
+  //     newScore++; // tile is 0
+  //   }// end below
   
     console.log("score to be added: " + newScore);
     this.score += newScore;
   } // end score func
+
+
+  
+  clearBoard(){
+    let e = document.getElementsByClassName("set");
+    console.log("elements with set class length " + e.length );   
+    for(let i = 0; i < e.length; i++){   
+      let e = document.getElementsByClassName("set");
+      e[0].classList.remove("set");
+
+    }
+  }
 
 
  
