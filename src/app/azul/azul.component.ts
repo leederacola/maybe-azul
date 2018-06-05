@@ -138,7 +138,7 @@ export class AzulComponent implements OnInit {
       newScore++;
     }
 
-    this.score = newScore;
+    this.score += newScore;
   } // end score func
 
 

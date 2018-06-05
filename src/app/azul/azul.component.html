@@ -1,5 +1,7 @@
+<h5>Azul Score Calc</h5>
+<h6><a href="https://www.planbgames.com/en/index.php?controller=attachment&id_attachment=9">rules</a></h6>
 <div class="grid-container">
-
+  
   <div id="\0" class="blue 0" (click)="toggleTileSet(0)">*</div>
   <div id="\1" class="yellow 1" (click)="toggleTileSet(1)">*</div>
   <div id="\2" class="red 2" (click)="toggleTileSet(2)">*</div>
@@ -31,9 +33,15 @@
   <div id="\20" class="blue 24" (click)="toggleTileSet(24)">*</div>
 
 </div>
+<h5>Score: {{score}}  ||  Current Tile: {{currentTile}}</h5>
 
-<h3>Current Tile: {{currentTile}}</h3>
-<h3 >Score: {{score}}</h3>
 <button (click)="scoreTile()">Score Tile</button>
 <button (click)="clearScore()">Clear Score</button>
 <button (click)="clearBoard()">Clear Board => broke but will do</button>
+<ul>
+  <li>visual grid is a list of tiles</li>
+  <li>tile 0 is top left, tile 24 is bottom right</li>
+  <li>click a tile to "set" it</li>
+  <li>"score tile" adds most recent tile clicked as your play</li>
+  <li>ryan m</li>
+</ul>
