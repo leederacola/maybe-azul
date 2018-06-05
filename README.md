@@ -1,3 +1,7 @@
+# What?
+This is a score calculator for Azul, my most played boardgame. Check it out here.... https://boardgamegeek.com/boardgame/230802/azul
+ 
+
 # Azul
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
